@@ -1,33 +1,13 @@
 channels:
 - conda-forge
 dependencies:
-# Jupyter
-- jupyterlab
-- nodejs
-- nbconvert
-- widgetsnbextension
-# Python Kernel
-- ipykernel
-- ipywidgets
-- altair
-- bqplot
-- dask
-- matplotlib
-- pandas
-- python=3.11
-- scikit-image
-- scikit-learn
-- seaborn
-- tensorflow
-- sympy
-- pyyaml
-- traittypes
-- invoke
-# C++ Kernel
-- xeus-cling
-- xtensor
-- xtensor-blas
-- xwidgets
-# R Kernel
-- r-ggplot2
-- r-irkernel
+  - python=3.11
+  - numpy
+  - psutil
+  - toolz
+  - matplotlib
+  - dill
+  - pandas
+  - partd
+  - bokeh
+  - dask
