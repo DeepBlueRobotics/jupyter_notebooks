@@ -24,7 +24,7 @@ jobs:
       - name: Build the JupyterLite site
         run: |
           jupyter lite build --contents . --output-dir dist
-          find dist -name all.json -exec bash -c "jq '(.. | .content?[]?.writable?)|=false | .writable=false' < '{}' > readonly-all.json ; mv -f readonly-all.json '{}'" \;
+          # find dist -name all.json -exec bash -c "jq '(.. | .content?[]?.writable?)|=false | .writable=false' < '{}' > readonly-all.json ; mv -f readonly-all.json '{}'" \;
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
