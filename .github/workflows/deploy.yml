@@ -24,6 +24,7 @@ jobs:
           python -m pip install -r requirements.txt
       - name: Build the JupyterLite site
         run: |
+          jupyter nbconvert --to html --no-input FlywheelShooter.ipynb
           jupyter lite build --contents . --output-dir dist
           find dist/api/contents -name all.json -exec bash -c "jq '(.. | .content?[]?.writable?)|=false | .writable=false' < '{}' > readonly-all.json ; mv -f readonly-all.json '{}'" \;
       - name: Upload artifact
