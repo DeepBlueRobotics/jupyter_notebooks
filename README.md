@@ -1,6 +1,6 @@
 # FRC-related Jupyter notebooks
 
-This repository contains Jupyter notebooks math and analysis relevant to FRC.
+This repository contains Jupyter notebooks with math and analysis relevant to FRC.
 
 They can be opened/edited with a Jupyter installation on your local computer, or a read-only copy can be accessed [via JupyterLite](https://deepbluerobotics.github.io/jupyter_notebooks/lab/index.html).
 
