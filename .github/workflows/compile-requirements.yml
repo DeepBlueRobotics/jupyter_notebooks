@@ -1,0 +1,32 @@
+name: Compile requirements.txt
+
+on:
+  push:
+    branches:
+      - main # Change to 'master' if that is your default branch
+    paths:
+      - 'requirements.in'
+      - '.github/workflows/compile-requirements.yml'
+  workflow_dispatch: # Lets you manually trigger a recompile from the Actions tab anytime
+
+permissions:
+  contents: write
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Compile requirements.in to requirements.txt
+        run: uv pip compile requirements.in -o requirements.txt
+
+      - name: Commit updated requirements.txt
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: compile requirements.txt from requirements.in"
+          file_pattern: requirements.txt
