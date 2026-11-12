@@ -3,7 +3,7 @@ name: Compile requirements.txt
 on:
   push:
     branches:
-      - main # Change to 'master' if that is your default branch
+      - master
     paths:
       - 'requirements.in'
       - '.github/workflows/compile-requirements.yml'
